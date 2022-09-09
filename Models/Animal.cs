@@ -1,4 +1,4 @@
-namespace CretaceousPark.Models
+namespace AnimalShelter.Models
 {
     public class Animal
     {
