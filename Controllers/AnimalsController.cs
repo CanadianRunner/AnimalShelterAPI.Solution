@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AnimalShelter.Models;
 
-namespace AnimalShelterAPI.Solution.Controllers
+namespace AnimalShelter.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -20,7 +20,15 @@ namespace AnimalShelterAPI.Solution.Controllers
             _context = context;
         }
 
-        // GET: api/Animals
+        /// <summary>
+        /// Gets list of all animals.
+        /// </summary>
+        /// <param></param>
+        /// <returns>A list of animals</returns>
+        /// <response code="200">Returns an array of all animals</response>
+        /// <response code="400">Bad request</response>
+        }
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Animal>>> GetAnimals()
         {
@@ -103,5 +111,5 @@ namespace AnimalShelterAPI.Solution.Controllers
         {
             return _context.Animals.Any(e => e.AnimalId == id);
         }
-    }
 }
+
