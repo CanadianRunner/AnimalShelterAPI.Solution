@@ -36,7 +36,7 @@ _This is a project I created at Epicodus that keeps track of the animals in Sean
 10) To view Swagger Documentation please enter `http://localhost:5000/index.html` into your browser of choice.  Swagger provides examples of the API and the ability to execute GET, POST, GET, PUT, and DELETE commands. 
 
 
-## For a visual representation of setup and a successfully built application, please consult the attached Gif.
+## For visual representation of a successfully built application, please consult the attached Gif.
 ![Settings](img/SwaggerExample.gif)
 
 
