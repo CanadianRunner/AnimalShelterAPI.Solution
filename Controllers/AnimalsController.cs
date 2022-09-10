@@ -13,7 +13,7 @@ namespace AnimalShelter.Controllers
     [ApiController]
     public class AnimalsController : ControllerBase
     {
-        private readonly AnimalShelterContext _context;
+      private readonly AnimalShelterContext _context;
 
         public AnimalsController(AnimalShelterContext context)
         {
@@ -27,7 +27,6 @@ namespace AnimalShelter.Controllers
         /// <returns>A list of animals</returns>
         /// <response code="200">Returns an array of all animals</response>
         /// <response code="400">Bad request</response>
-        }
         
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Animal>>> GetAnimals()
@@ -111,5 +110,6 @@ namespace AnimalShelter.Controllers
         {
             return _context.Animals.Any(e => e.AnimalId == id);
         }
+    }
 }
 

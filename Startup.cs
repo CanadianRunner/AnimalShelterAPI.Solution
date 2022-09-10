@@ -4,7 +4,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using AnimalShelter.Models;
+using System;
+using System.Reflection;
+using System.IO;
 
 namespace AnimalShelter
 {
