@@ -34,7 +34,22 @@ namespace AnimalShelter.Controllers
             return await _context.Animals.ToListAsync();
         }
 
-        // GET: api/Animals/5
+        /// <summary>
+        /// Gets animal by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Returns a specific animal.</returns>
+        /// <remarks>
+        /// Sample request:
+        ///
+        /// GET/api/Animals/{Id}
+        /// 
+        /// {
+        ///   "id": 1
+        /// }
+        /// <response code="200">Returns a specific animal by their id.</response>
+        /// <response code="400">Bad request</response>
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Animal>> GetAnimal(int id)
         {
