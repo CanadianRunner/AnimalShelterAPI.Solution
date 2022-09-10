@@ -39,14 +39,6 @@ namespace AnimalShelter.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Returns a specific animal.</returns>
-        /// <remarks>
-        /// Sample request:
-        ///
-        /// GET/api/Animals/{Id}
-        /// 
-        /// {
-        ///   "id": 1
-        /// }
         /// <response code="200">Returns a specific animal by their id.</response>
         /// <response code="400">Bad request</response>
 
@@ -62,9 +54,14 @@ namespace AnimalShelter.Controllers
 
             return animal;
         }
+        /// <summary>
+        /// Edits animal by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Returns an updated animal by id.</returns>
+        /// <response code="200">This request was successful.  The database was updated with your new data.</response>
+        /// <response code="400">Bad request</response>
 
-        // PUT: api/Animals/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAnimal(int id, Animal animal)
         {
@@ -93,9 +90,30 @@ namespace AnimalShelter.Controllers
 
             return NoContent();
         }
-
-        // POST: api/Animals
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
+        /// <summary>
+        /// Adds animal to database.
+        /// </summary>
+        /// <returns>test</returns>
+        ///  <remarks>
+        ///  Sample request: 
+        ///
+        ///   POST/api/Animals
+        ///   <example>
+        ///   {
+        ///      "animalId": 1,
+        ///       {
+        ///         "name": "Joe",
+        ///         "species": "Terrier",
+        ///         "age": 4,
+        ///         "gender": "male"
+        ///       }
+        ///    }
+        ///    </example>
+        /// </remarks>
+        /// <response code="200">Returns status 200.</response>
+        /// <response code="400">Bad request</response>
+      
         [HttpPost]
         public async Task<ActionResult<Animal>> PostAnimal(Animal animal)
         {
@@ -105,7 +123,15 @@ namespace AnimalShelter.Controllers
             return CreatedAtAction("GetAnimal", new { id = animal.AnimalId }, animal);
         }
 
-        // DELETE: api/Animals/5
+        /// <summary>
+        /// Deletes animal from the database
+        /// </summary>
+        /// <returns></returns>
+        /// <param name="id"></param>
+        /// <returns>Response code 200.</returns>
+        /// <response code="200">This request was successful.  The database has removed your selection by id.</response>
+        /// <response code="400">Bad request</response>
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAnimal(int id)
         {
